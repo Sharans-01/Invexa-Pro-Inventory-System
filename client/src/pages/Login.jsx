@@ -20,65 +20,70 @@ const Login = () => {
 
       if (res.data.success) {
         localStorage.setItem("token", res.data.token);
-        toast.success("Login Successful! Redirecting...");
+        toast.success("Welcome to Invexa Pro");
         setTimeout(() => navigate("/dashboard"), 1500);
       } else {
-        toast.error(res.data.message || "Invalid credentials!");
+        toast.error(res.data.message || "Invalid credentials");
       }
     } catch (error) {
-      console.error("Login Error:", error);
-      toast.error("Login failed! Please check your credentials.");
+      toast.error("Login failed. Try again.");
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-600 via-purple-600 to-blue-500 px-4">
-      <Toaster position="top-center" reverseOrder={false} />
+   <div
+  className="min-h-screen flex items-center justify-center bg-cover bg-center relative px-4"
+  style={{ backgroundImage: "url('/loginbg.jpg')" }}
+>
+
+      <Toaster position="top-center" />
+
+      <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-indigo-900/60 to-black/80"></div>
 
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="bg-white shadow-2xl rounded-3xl w-full max-w-md p-8 transform hover:scale-[1.02] transition-all"
+        transition={{ duration: 0.6 }}
+        className="relative w-full max-w-md rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl p-8"
       >
         <div className="flex flex-col items-center mb-6">
-          <div className="bg-indigo-100 p-4 rounded-full mb-3 shadow-inner">
-            <FaBoxOpen className="text-indigo-600 text-5xl" />
+          <div className="bg-indigo-600 p-4 rounded-full shadow-lg mb-3">
+            <FaBoxOpen className="text-white text-4xl" />
           </div>
-          <h2 className="text-3xl font-extrabold text-gray-800 text-center">
-            Inventory Management System
+          <h2 className="text-3xl font-bold text-white tracking-wide">
+            Invexa Pro
           </h2>
-          <p className="text-gray-500 text-sm mt-1 tracking-wide">
-            Admin / Staff Login
+          <p className="text-indigo-200 text-sm mt-1">
+            Smart Inventory Management
           </p>
         </div>
 
         <form onSubmit={handleLogin} className="space-y-5">
           <div>
-            <label className="block text-gray-700 font-semibold mb-2">
+            <label className="text-indigo-100 text-sm font-medium mb-1 block">
               Email
             </label>
             <input
               type="email"
-              placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              placeholder="admin@invexa.com"
               required
-              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none transition"
+              className="w-full px-4 py-3 rounded-xl bg-white/20 text-white placeholder-indigo-200 border border-white/30 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             />
           </div>
 
           <div>
-            <label className="block text-gray-700 font-semibold mb-2">
+            <label className="text-indigo-100 text-sm font-medium mb-1 block">
               Password
             </label>
             <input
               type="password"
-              placeholder="Enter your password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              placeholder="••••••••"
               required
-              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none transition"
+              className="w-full px-4 py-3 rounded-xl bg-white/20 text-white placeholder-indigo-200 border border-white/30 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             />
           </div>
 
@@ -86,14 +91,14 @@ const Login = () => {
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
             type="submit"
-            className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold py-3 rounded-lg shadow-md hover:shadow-lg transition-all"
+            className="w-full py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold shadow-lg hover:shadow-xl transition"
           >
-            Login
+            Sign In
           </motion.button>
         </form>
 
-        <p className="text-center text-gray-500 text-sm mt-6">
-          © {new Date().getFullYear()} IMS Portal. All rights reserved.
+        <p className="text-center text-indigo-200 text-xs mt-6">
+          © {new Date().getFullYear()} Invexa Pro. All rights reserved.
         </p>
       </motion.div>
     </div>

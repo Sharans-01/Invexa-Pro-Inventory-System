@@ -95,7 +95,7 @@ Add screenshots of your application UI below to showcase the system.
 
 ### ⚙️ Admin Dashboard
 
-![Admin Dashboard](screenshots/admin-dashboard.png)
+![Admin Dashboard](screenshots/dashboard.png)
 
 ---
 
