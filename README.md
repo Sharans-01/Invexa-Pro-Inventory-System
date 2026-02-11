@@ -97,42 +97,6 @@ Add screenshots of your application UI below to showcase the system.
 
 ![Admin Dashboard](screenshots/dashboard.png)
 
----
-
-## ⚙️ Installation & Setup
-
-1. Clone the repository
-
-   ```bash
-   git clone https://github.com/your-username/invexa-pro.git
-   ```
-
-2. Install backend dependencies
-
-   ```bash
-   cd backend
-   npm install
-   ```
-
-3. Install frontend dependencies
-
-   ```bash
-   cd frontend
-   npm install
-   ```
-
-4. Configure environment variables (`.env`)
-
-   * Database connection
-   * JWT secret
-
-5. Run the application
-
-   ```bash
-   npm run dev
-   ```
-
----
 
 ## ✅ Future Enhancements
 
@@ -147,7 +111,7 @@ Add screenshots of your application UI below to showcase the system.
 ## 👨‍💻 Author
 
 **Sharan M**
-CSE
+CSE 
 
 ---
 
